@@ -34,14 +34,16 @@ for country in df["iso3"].unique():
     full_closure = np.linspace(data["current_yield_efficiency"].values[0], data["full_closure_efficiency"].values[0], 2100-2021)
     half_closure = np.linspace(data["current_yield_efficiency"].values[0], data["50%_closure_efficiency"].values[0], 2100-2021)
     quarter_closure = np.linspace(data["current_yield_efficiency"].values[0], data["25%_closure_efficiency"].values[0], 2100-2021)
+    no_closure = np.linspace(data["current_yield_efficiency"].values[0], data["current_yield_efficiency"].values[0], 2100-2021)
     df.loc[(df["iso3"] == country) & (df["year"] > 2021), "full_closure_efficiency"] = full_closure
     df.loc[(df["iso3"] == country) & (df["year"] > 2021), "50%_closure_efficiency"] = half_closure
     df.loc[(df["iso3"] == country) & (df["year"] > 2021), "25%_closure_efficiency"] = quarter_closure
+    df.loc[(df["iso3"] == country) & (df["year"] > 2021), "no_closure_efficiency"] = no_closure
     df.loc[(df["iso3"] == country) & (df["year"] > 2021), "current_beef_yield"] = data["current_beef_yield"].values[0]
     df.loc[(df["iso3"] == country) & (df["year"] > 2021), "current_mutton_yield"] = data["current_mutton_yield"].values[0]
     df.loc[(df["iso3"] == country) & (df["year"] > 2021), "current_milk_yield"] = data["current_milk_yield"].values[0]
 
-for x in ["full_closure", "50%_closure", "25%_closure"]:
+for x in ["full_closure", "50%_closure", "25%_closure", "no_closure"]:
     for y in ["beef", "mutton", "milk"]:
         df[f"{x}_{y}_yield"] = df[f"current_{y}_yield"] * df[f"{x}_efficiency"]
         df[f"{x}_{y}_pasture_area"] = df[f"{y} protein demand (ton per year)"] / df[f"{x}_{y}_yield"]
