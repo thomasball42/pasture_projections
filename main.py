@@ -116,4 +116,4 @@ for item in ["beef", "mutton", "milk"]:
     df = df.drop(columns=[f"current_{item}_yield", f"{item}_m2"])
 df = df.drop(columns=["current_yield_gap", "current_yield_efficiency"])
 
-df.to_csv(Path(output_dir) / "pasture_projection_scenarios.csv", index=False)
+df.to_csv(Path(output_dir) / "projected_pasture_scenarios_TB_LDN.csv", index=False)
