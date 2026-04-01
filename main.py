@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from pathlib import Path
+import matplotlib.pyplot as plt
 
 scenarios = {
             
@@ -61,7 +62,7 @@ df["current_beef_yield"] = df["beef protein demand (ton per year)"] / df["beef_m
 df["current_mutton_yield"] = df["mutton protein demand (ton per year)"] / df["mutton_m2"]
 df["current_milk_yield"] = df["milk protein demand (ton per year)"] / df["milk_m2"]
 
-yield_gaps = pd.read_csv(Path(data_dir) / "pasture_yield_gaps.csv").rename(columns={"iso_a3": "iso3", "mean_gap": "current_yield_gap"})[["iso3", "current_yield_gap"]]
+yield_gaps = pd.read_csv(Path(data_dir) / "pasture_yield_gaps_v2.csv").rename(columns={"iso_a3": "iso3", "mean_gap": "current_yield_gap"})[["iso3", "current_yield_gap"]]
 df = df.merge(yield_gaps, on="iso3", how="left")
 
 df["current_yield_efficiency"] = 1 - df["current_yield_gap"]
@@ -117,3 +118,20 @@ for item in ["beef", "mutton", "milk"]:
 df = df.drop(columns=["current_yield_gap", "current_yield_efficiency"])
 
 df.to_csv(Path(output_dir) / "projected_pasture_scenarios_TB_LDN.csv", index=False)
+
+# countries = ["GBR"]
+
+# scenarios_to_plot = ["no_gap_closure", "full_gap_closure_by_2100", "full_gap_closure_by_2050"]
+
+# fig, ax = plt.subplots(figsize=(10, 6))
+# for scenario_name in scenarios_to_plot:
+#     scenario_data = scenarios[scenario_name]
+#     for iso3 in countries:
+#         country_data = df[df["iso3"] == iso3]
+#         ax.plot(country_data["year"], country_data[f"{scenario_name}_total_pasture_area"], label=f"{iso3}_{scenario_data['closure_perc']}_{scenario_data['target_year']}")
+#     ax.set_xlabel("Year")
+#     ax.set_ylabel("Total Pasture Area (m2)")
+#     ax.set_ylim(0, None)
+#     ax.legend()
+
+# plt.show()
