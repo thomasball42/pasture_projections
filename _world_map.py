@@ -73,7 +73,7 @@ for country in countries:
                             "ratio": v2 / v1 if v1 > 0 else np.nan,
                         }, index=[0])], ignore_index=True)
 
-world = gpd.read_file(Path(__file__).parent / "data" / "geoBoundariesCGAZ_ADM0" / "geoBoundariesCGAZ_ADM0.shp")
+world = gpd.read_file(Path(__file__).parent / "data" / "boundaries" / "geoBoundariesCGAZ_ADM0" / "geoBoundariesCGAZ_ADM0.shp")
 
 
 world_filt = world.merge(map_df, left_on="shapeGroup", right_on="iso3", how="left")

@@ -17,7 +17,6 @@ country_codes = pd.read_excel(Path("data", "animal_source_food_demand&production
 
 gdp_df = gdp_df.merge(country_codes, left_on="Area", right_on="Country or Area", how="inner")
 
-
 files = sorted(historic_yields_dir.glob("*.csv"))
 
 output_df = pd.DataFrame()
