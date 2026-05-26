@@ -1,0 +1,166 @@
+country_iso,country_name,scenario,pasture_area_Mha_2025,pasture_area_Mha_2075,ratio
+AGO,Angola,no_gap_closure_mutton_pasture_area_m2,3.2918874676521144,15.0495172578259,4.571698578918837
+ALB,Albania,no_gap_closure_mutton_pasture_area_m2,0.11643932251502805,0.07712828419509478,0.6623903551580725
+ARE,United Arab Emirates,no_gap_closure_mutton_pasture_area_m2,0.18699145779493337,0.21585308393877053,1.1543472973802293
+ARG,Argentina,no_gap_closure_mutton_pasture_area_m2,0.8955872366424343,0.8085135676125393,0.9027747767416437
+ARM,Armenia,no_gap_closure_mutton_pasture_area_m2,0.07870858840708726,0.06246469317943175,0.7936197871617167
+ATG,Antigua and Barbuda,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+AUS,Australia,no_gap_closure_mutton_pasture_area_m2,48.26287816153349,47.42947442100654,0.9827319925318669
+AUT,Austria,no_gap_closure_mutton_pasture_area_m2,0.016188788639540007,0.010667352858961443,0.6589345933461115
+AZE,Azerbaijan,no_gap_closure_mutton_pasture_area_m2,0.45929216710943177,0.5533571367883687,1.2048042105114432
+BEL,Belgium,no_gap_closure_mutton_pasture_area_m2,0.002595023822268911,0.0018789189807530068,0.7240469103324874
+BFA,Burkina Faso,no_gap_closure_mutton_pasture_area_m2,1.1541317930826185,3.920632824179603,3.397040829893285
+BGD,Bangladesh,no_gap_closure_mutton_pasture_area_m2,0.383808099766044,1.1800726104219281,3.074642278631585
+BGR,Bulgaria,no_gap_closure_mutton_pasture_area_m2,0.1644325783382357,0.08717085910909138,0.5301313157650671
+BHR,Bahrain,no_gap_closure_mutton_pasture_area_m2,0.0034204122883267473,0.0037037489648551673,1.0828369952638157
+BHS,Bahamas,no_gap_closure_mutton_pasture_area_m2,0.001478197858062439,0.0009467931800076795,0.640505041218702
+BIH,Bosnia and Herzegovina,no_gap_closure_mutton_pasture_area_m2,0.028798030275217355,0.017289179370708122,0.600359788689667
+BLR,Belarus,no_gap_closure_mutton_pasture_area_m2,0.004920874981661255,0.002785933178527336,0.5661458965955731
+BLZ,Belize,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+BOL,Bolivia (Plurinational State of),no_gap_closure_mutton_pasture_area_m2,1.7597229739466087,2.050232754337928,1.165088360322864
+BRA,Brazil,no_gap_closure_mutton_pasture_area_m2,1.3750851391700134,1.2296216921127672,0.8942149522864843
+BRB,Barbados,no_gap_closure_mutton_pasture_area_m2,0.0004528626364489266,0.0002695653842079177,0.5952475707019804
+BTN,Bhutan,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+BWA,Botswana,no_gap_closure_mutton_pasture_area_m2,1.1733533636185172,3.5158794393285815,2.9964370055461576
+CAN,Canada,no_gap_closure_mutton_pasture_area_m2,0.2794897445834115,0.2487081237874818,0.8898649363975386
+CHE,Switzerland,no_gap_closure_mutton_pasture_area_m2,0.015219409925009406,0.01101470310479011,0.7237273428511916
+CHL,Chile,no_gap_closure_mutton_pasture_area_m2,0.38047972593455054,0.25668025595650806,0.6746226893589115
+CHN,China,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+CIV,Côte d’Ivoire,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+CMR,Cameroon,no_gap_closure_mutton_pasture_area_m2,0.414052861937415,2.476870837285837,5.982015981476833
+COD,Democratic Republic of the Congo,no_gap_closure_mutton_pasture_area_m2,9.527969195393743,193.1845539335192,20.275522513959583
+COG,Congo,no_gap_closure_mutton_pasture_area_m2,1.0374439820303203,2.3637481909128524,2.278434529339021
+COL,Colombia,no_gap_closure_mutton_pasture_area_m2,0.13396690913546538,0.14602397569452816,1.0900003339397109
+COM,Comoros,no_gap_closure_mutton_pasture_area_m2,0.002069252287386941,0.006295359751020861,3.0423355283423
+CPV,Cabo Verde,no_gap_closure_mutton_pasture_area_m2,0.0071050858999052065,0.008367870158267577,1.1777296258134218
+CRI,Costa Rica,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+CYP,Cyprus,no_gap_closure_mutton_pasture_area_m2,0.00040057043507657665,0.0003222464103066256,0.8044687827373532
+CZE,Czechia,no_gap_closure_mutton_pasture_area_m2,0.01086359366064599,0.006788476040873595,0.6248830960481567
+DEU,Germany,no_gap_closure_mutton_pasture_area_m2,0.0719441669934387,0.047253643393564825,0.6568099314830396
+DJI,Djibouti,no_gap_closure_mutton_pasture_area_m2,0.47405181277166797,1.4739676229954455,3.1092964593416657
+DNK,Denmark,no_gap_closure_mutton_pasture_area_m2,0.001842138903576876,0.001365742391760281,0.7413894734585013
+DOM,Dominican Republic,no_gap_closure_mutton_pasture_area_m2,0.013243949176116725,0.015038417913020293,1.1354934780435126
+DZA,Algeria,no_gap_closure_mutton_pasture_area_m2,16.00483320706574,27.775007451892098,1.7354137398714105
+ECU,Ecuador,no_gap_closure_mutton_pasture_area_m2,0.03675377207032456,0.047580563493514166,1.294576333620224
+EGY,Egypt,no_gap_closure_mutton_pasture_area_m2,0.02226399121597827,0.047921972661135764,2.1524430276788578
+ESP,Spain,no_gap_closure_mutton_pasture_area_m2,0.7458343821853618,0.43119683243532897,0.5781401913543909
+EST,Estonia,no_gap_closure_mutton_pasture_area_m2,0.00254173074269794,0.0014217277358740488,0.5593541880698759
+FIN,Finland,no_gap_closure_mutton_pasture_area_m2,0.004372470708654572,0.0028588390720165266,0.6538269236104737
+FJI,Fiji,no_gap_closure_mutton_pasture_area_m2,0.006322923611133482,0.007003562305468888,1.1076461991628255
+FRA,France,no_gap_closure_mutton_pasture_area_m2,0.2717526161107471,0.2030492768093144,0.7471842579302563
+FSM,Micronesia (Federated States of),no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+GAB,Gabon,no_gap_closure_mutton_pasture_area_m2,0.5314320443671292,1.099070812103367,2.0681304858314036
+GBR,United Kingdom of Great Britain and Northern Ireland,no_gap_closure_mutton_pasture_area_m2,1.2194126548426871,0.9808807194056195,0.8043878464851261
+GEO,Georgia,no_gap_closure_mutton_pasture_area_m2,0.12275969727172835,0.1316602250463138,1.0725036634367398
+GHA,Ghana,no_gap_closure_mutton_pasture_area_m2,2.3652966609927537,8.158248689570781,3.4491439590273765
+GIN,Guinea,no_gap_closure_mutton_pasture_area_m2,1.7102274756444336,7.5379713118670075,4.407584031490672
+GMB,Gambia,no_gap_closure_mutton_pasture_area_m2,0.04482235676517476,0.13242342630175924,2.9544056997165113
+GNB,Guinea-Bissau,no_gap_closure_mutton_pasture_area_m2,0.03046890638459576,0.1283563133905375,4.2126984070367195
+GRC,Greece,no_gap_closure_mutton_pasture_area_m2,0.9519796594374852,0.5413256242122729,0.568631502622794
+GRD,Grenada,no_gap_closure_mutton_pasture_area_m2,0.00047200049902073937,0.0004106948041322745,0.8701151905227729
+GTM,Guatemala,no_gap_closure_mutton_pasture_area_m2,0.01772199138488636,0.029342285211222435,1.6556991014139686
+GUY,Guyana,no_gap_closure_mutton_pasture_area_m2,0.06948912572162795,0.051874622193566776,0.7465142445650486
+HKG,"China, Hong Kong Special Administrative Region",no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+HND,Honduras,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+HRV,Croatia,no_gap_closure_mutton_pasture_area_m2,0.0307611488399032,0.01604545762294274,0.5216143813890546
+HTI,Haiti,no_gap_closure_mutton_pasture_area_m2,0.060309596761937444,0.1786575711246064,2.962340667436872
+HUN,Hungary,no_gap_closure_mutton_pasture_area_m2,0.006544093631243025,0.0041200574613277545,0.6295841247835517
+IDN,Indonesia,no_gap_closure_mutton_pasture_area_m2,1.1050471568427913,1.5977490508208974,1.44586503926746
+IND,India,no_gap_closure_mutton_pasture_area_m2,2.0320132475436843,3.7320769535138805,1.8366400701497632
+IRL,Ireland,no_gap_closure_mutton_pasture_area_m2,0.14987337628410033,0.11347073730957831,0.7571107032011003
+IRN,Iran (Islamic Republic of),no_gap_closure_mutton_pasture_area_m2,5.591424921505822,5.333509491813584,0.9538730407162869
+IRQ,Iraq,no_gap_closure_mutton_pasture_area_m2,1.3343242659177814,5.975242567778796,4.478103801603934
+ISL,Iceland,no_gap_closure_mutton_pasture_area_m2,0.7172962057563549,0.5393323863877012,0.7518963324488811
+ISR,Israel,no_gap_closure_mutton_pasture_area_m2,0.016394913462974347,0.01857997141955845,1.133276577611633
+ITA,Italy,no_gap_closure_mutton_pasture_area_m2,0.07838216717226253,0.042075696192567305,0.536801899086261
+JAM,Jamaica,no_gap_closure_mutton_pasture_area_m2,0.008302975287986446,0.0047330122812694955,0.5700381028614742
+JOR,Jordan,no_gap_closure_mutton_pasture_area_m2,0.16803832724739112,0.2695817952522593,1.604287543611243
+KAZ,Kazakhstan,no_gap_closure_mutton_pasture_area_m2,49.25346991582388,72.92316665815555,1.480569120973286
+KEN,Kenya,no_gap_closure_mutton_pasture_area_m2,3.348199988159607,11.607487359997005,3.466784362058746
+KGZ,Kyrgyzstan,no_gap_closure_mutton_pasture_area_m2,2.351196321512405,3.720272590530654,1.5822892186806383
+KHM,Cambodia,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+KIR,Kiribati,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+KOR,Republic of Korea,no_gap_closure_mutton_pasture_area_m2,0.0003795388245225225,0.00018079594571020357,0.4763569206329637
+KWT,Kuwait,no_gap_closure_mutton_pasture_area_m2,0.10952750470117553,0.12409775781387401,1.1330282576276214
+LAO,Lao People's Democratic Republic,no_gap_closure_mutton_pasture_area_m2,0.013972043882611168,0.03153955648112471,2.257333053496711
+LBN,Lebanon,no_gap_closure_mutton_pasture_area_m2,0.02361175459338241,0.030338799959149974,1.2849023921184124
+LBR,Liberia,no_gap_closure_mutton_pasture_area_m2,0.5540358475644362,2.8307543570976503,5.109334295861467
+LBY,Libya,no_gap_closure_mutton_pasture_area_m2,8.775694775384514,12.338148276560256,1.4059454655565606
+LCA,Saint Lucia,no_gap_closure_mutton_pasture_area_m2,8.265517826133301e-05,5.614983734051624e-05,0.6793263110870785
+LKA,Sri Lanka,no_gap_closure_mutton_pasture_area_m2,0.012083847560766286,0.019138856005444013,1.583837921589135
+LSO,Lesotho,no_gap_closure_mutton_pasture_area_m2,0.08553287103879972,0.2131392601124997,2.491898816489098
+LTU,Lithuania,no_gap_closure_mutton_pasture_area_m2,0.006189850615409788,0.002686354392993384,0.4339934127498389
+LUX,Luxembourg,no_gap_closure_mutton_pasture_area_m2,0.00012946678329056727,0.00010266202880561352,0.7929603732812701
+LVA,Latvia,no_gap_closure_mutton_pasture_area_m2,0.008645047149108158,0.0041561609806836,0.4807563115618588
+MAC,"China, Macao Special Administrative Region",no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+MAR,Morocco,no_gap_closure_mutton_pasture_area_m2,4.579401826200223,5.981811472426474,1.3062429765832335
+MDA,Republic of Moldova,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+MDG,Madagascar,no_gap_closure_mutton_pasture_area_m2,3.0578672068930244,24.37665182738549,7.971782349617995
+MDV,Maldives,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+MEX,Mexico,no_gap_closure_mutton_pasture_area_m2,2.717093467170635,2.7613598204543357,1.016291803656573
+MKD,North Macedonia,no_gap_closure_mutton_pasture_area_m2,0.07606675413543329,0.056146243367765976,0.7381180386348578
+MLT,Malta,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+MMR,Myanmar,no_gap_closure_mutton_pasture_area_m2,0.015416070113028896,0.021733679403917162,1.4098067305459994
+MNE,Montenegro,no_gap_closure_mutton_pasture_area_m2,0.007285328662173173,0.005431288723044118,0.7455104601175254
+MNG,Mongolia,no_gap_closure_mutton_pasture_area_m2,66.55146931496729,118.56335107647402,1.7815286769304937
+MOZ,Mozambique,no_gap_closure_mutton_pasture_area_m2,3.5721099412641015,26.61739163578255,7.451448044279164
+MRT,Mauritania,no_gap_closure_mutton_pasture_area_m2,18.69661684744264,54.90738222556509,2.936754958054105
+MUS,Mauritius,no_gap_closure_mutton_pasture_area_m2,0.0001683761632421178,0.0001056498433524827,0.6274631831381186
+MWI,Malawi,no_gap_closure_mutton_pasture_area_m2,0.8218029817889765,2.60270101305641,3.167062021837169
+MYS,Malaysia,no_gap_closure_mutton_pasture_area_m2,0.017723224423921238,0.018252077753273102,1.0298395662494724
+NAM,Namibia,no_gap_closure_mutton_pasture_area_m2,6.1364364234474635,12.518881121200584,2.0400897617655835
+NER,Niger,no_gap_closure_mutton_pasture_area_m2,8.025052697025684,65.35266056703588,8.143580239822906
+NGA,Nigeria,no_gap_closure_mutton_pasture_area_m2,13.534842123088877,74.84379292304409,5.52971303561563
+NIC,Nicaragua,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+NLD,Netherlands (Kingdom of the),no_gap_closure_mutton_pasture_area_m2,0.011868500534023335,0.009120247772797229,0.7684414511043149
+NOR,Norway,no_gap_closure_mutton_pasture_area_m2,0.059986549809496796,0.04550714507037161,0.7586224781203723
+NPL,Nepal,no_gap_closure_mutton_pasture_area_m2,0.21869517126861443,0.4551512608421879,2.08121312510894
+NZL,New Zealand,no_gap_closure_mutton_pasture_area_m2,1.3919071650236372,1.2283216183786976,0.8824738094927749
+OMN,Oman,no_gap_closure_mutton_pasture_area_m2,0.8135201311990783,1.346827852106187,1.6555556530863547
+PAK,Pakistan,no_gap_closure_mutton_pasture_area_m2,0.45392934419888986,1.0342865661401512,2.2785188473891145
+PAN,Panama,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+PER,Peru,no_gap_closure_mutton_pasture_area_m2,1.2912197228616922,1.4793447019165418,1.1456955587991746
+PHL,Philippines,no_gap_closure_mutton_pasture_area_m2,0.11333659552108026,0.1520317281762933,1.3414178137018051
+PNG,Papua New Guinea,no_gap_closure_mutton_pasture_area_m2,0.0033552509302012855,0.016942638124485626,5.0495889806576155
+POL,Poland,no_gap_closure_mutton_pasture_area_m2,0.011847823924911748,0.005731194881931342,0.4837339682167865
+PRT,Portugal,no_gap_closure_mutton_pasture_area_m2,0.11880916743679157,0.07602807927253231,0.639917616735935
+PRY,Paraguay,no_gap_closure_mutton_pasture_area_m2,0.06838844231257496,0.11774522703237655,1.7217123690902678
+QAT,Qatar,no_gap_closure_mutton_pasture_area_m2,0.03189791439900319,0.033003782258672905,1.0346689706993593
+ROU,Romania,no_gap_closure_mutton_pasture_area_m2,0.7526129315130967,0.4037997289813941,0.5365304156674158
+RUS,Russian Federation,no_gap_closure_mutton_pasture_area_m2,6.637194840528194,4.513751255421185,0.6800691201438311
+RWA,Rwanda,no_gap_closure_mutton_pasture_area_m2,0.08365369240127189,0.7980892113975445,9.540394314805047
+SAU,Saudi Arabia,no_gap_closure_mutton_pasture_area_m2,86.11441108831053,95.368185073746,1.1074590636861663
+SEN,Senegal,no_gap_closure_mutton_pasture_area_m2,1.5877604671298287,5.522661683898994,3.4782713124746256
+SLB,Solomon Islands,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+SLE,Sierra Leone,no_gap_closure_mutton_pasture_area_m2,0.2844856208342605,1.8592572910382088,6.535505329182877
+SLV,El Salvador,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+SRB,Serbia,no_gap_closure_mutton_pasture_area_m2,0.08316193502424435,0.06263879575946353,0.7532147459195403
+STP,Sao Tome and Principe,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+SUR,Suriname,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+SVK,Slovakia,no_gap_closure_mutton_pasture_area_m2,0.005220602626393453,0.003330389664152119,0.6379320362968999
+SVN,Slovenia,no_gap_closure_mutton_pasture_area_m2,0.0065824426028916845,0.0039928556906808155,0.6065917975383095
+SWE,Sweden,no_gap_closure_mutton_pasture_area_m2,0.020844657708749676,0.017114258199254426,0.8210381018667727
+SWZ,Eswatini,no_gap_closure_mutton_pasture_area_m2,0.10100573323017077,0.2195749295528038,2.173885803615116
+SYC,Seychelles,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+THA,Thailand,no_gap_closure_mutton_pasture_area_m2,0.017795770870630574,0.01866965692499663,1.0491063894179646
+TJK,Tajikistan,no_gap_closure_mutton_pasture_area_m2,0.3469065146318214,0.8340627568281952,2.404286808258421
+TKM,Turkmenistan,no_gap_closure_mutton_pasture_area_m2,9.861359630179653,14.145505563267811,1.4344376529963456
+TLS,Timor-Leste,no_gap_closure_mutton_pasture_area_m2,0.013651059253636572,0.05974871481438643,4.376855576131916
+TON,Tonga,no_gap_closure_mutton_pasture_area_m2,7.248452676539222e-05,9.551392959045662e-05,1.3177147434459047
+TTO,Trinidad and Tobago,no_gap_closure_mutton_pasture_area_m2,0.0005311609965744627,0.00028930793618841974,0.5446708964969382
+TUN,Tunisia,no_gap_closure_mutton_pasture_area_m2,1.2083146813205596,1.1963969382553692,0.9901368879734495
+TUR,Türkiye,no_gap_closure_mutton_pasture_area_m2,1.6455053508992687,1.6455094190005797,1.0000024722504297
+TZA,United Republic of Tanzania,no_gap_closure_mutton_pasture_area_m2,2.3412013771708113,13.916479320519425,5.944161598493753
+UGA,Uganda,no_gap_closure_mutton_pasture_area_m2,0.44415406792106094,1.985903597509885,4.471204343135359
+UKR,Ukraine,no_gap_closure_mutton_pasture_area_m2,0.1485591604611629,0.09508911857569106,0.6400757669908195
+URY,Uruguay,no_gap_closure_mutton_pasture_area_m2,0.38688509335874616,0.2548585171536953,0.658744732036944
+USA,United States of America,no_gap_closure_mutton_pasture_area_m2,0.6623557934549876,0.4942725558686448,0.746234215436412
+UZB,Uzbekistan,no_gap_closure_mutton_pasture_area_m2,1.8717864244729119,3.6016266686942324,1.9241653970796573
+VCT,Saint Vincent and the Grenadines,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+VNM,Viet Nam,no_gap_closure_mutton_pasture_area_m2,0.018428699533003044,0.020101477173904606,1.0907702487582407
+VUT,Vanuatu,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+WSM,Samoa,no_gap_closure_mutton_pasture_area_m2,0.0,0.0,
+YEM,Yemen,no_gap_closure_mutton_pasture_area_m2,9.982663862740822,61.645716573515514,6.175277202671451
+ZAF,South Africa,no_gap_closure_mutton_pasture_area_m2,5.782974496414215,8.585011524413694,1.4845321434042131
+ZMB,Zambia,no_gap_closure_mutton_pasture_area_m2,0.8248369567315335,4.2180803273396315,5.113835277281987
+ZWE,Zimbabwe,no_gap_closure_mutton_pasture_area_m2,0.3133005133893177,0.797448210886794,2.5453140892107577

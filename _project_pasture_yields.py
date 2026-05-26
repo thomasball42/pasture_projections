@@ -8,8 +8,6 @@ output_dir = Path("data") / "processed_pasture_yields"
 
 output_dir.mkdir(exist_ok=True)
 
-
-
 def linear_projection_with_r2(df):
     results = []
     id_col = df.columns[0]
@@ -19,9 +17,9 @@ def linear_projection_with_r2(df):
         country_id = row[id_col]
         y_values = row[numeric_cols].values.astype(float)
 
-        idx = ~np.isnan(y_values) & ~np.isnan(x_values)
+        mask = ~np.isnan(y_values) & ~np.isnan(x_values) & ~np.isinf(y_values) & ~np.isinf(x_values)
 
-        slope, intercept, r_value, p_value, std_err = stats.linregress(x_values[idx], y_values[idx])
+        slope, intercept, r_value, p_value, std_err = stats.linregress(x_values[mask], y_values[mask])
         r2 = r_value ** 2
         
         results.append({
@@ -48,10 +46,6 @@ def generate_linear_fits():
         print(f"\nProcessing: {file.name}")
         df = pd.read_csv(file)
         r2_results = linear_projection_with_r2(df)
-
-       
-        # Get linear projection results
-        r2_results = linear_projection_with_r2(df)
         
         r2_results["item"] = "_".join(file.stem.split("_")[-2:])
         r2_results["class"] = r2_results["item"].apply(lambda x: classes[pasture_items.index(x)] if x in pasture_items else None)
@@ -59,9 +53,6 @@ def generate_linear_fits():
         # Save results
         
         output_df = pd.concat([output_df, r2_results])
-
-        # r2_results.to_csv(output_file, index=False)
-        # print(f"  Saved to: {output_file}")
 
     output_file = output_dir / f"pasture_linear_fits.csv"
 

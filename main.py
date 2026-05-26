@@ -3,6 +3,8 @@ import numpy as np
 from pathlib import Path
 import matplotlib.pyplot as plt
 import _project_pasture_yields
+import _project_pasture_yields_GDP_region as _project_pasture_yields_GDP
+
 import os
 
 scenarios = {
@@ -15,41 +17,41 @@ scenarios = {
                                                 "closure_perc" : 0.0,
                                                 "hist_proj" : True},
 
-            "quarter_gap_closure_by_2100" : {"target_year" : 2100,
-                                        "closure_perc" : 0.25,
-                                        "hist_proj" : True},
+            # "quarter_gap_closure_by_2100" : {"target_year" : 2100,
+            #                             "closure_perc" : 0.25,
+            #                             "hist_proj" : True},
 
-            "half_gap_closure_by_2100" : {"target_year" : 2100,
-                                        "closure_perc" : 0.5,
-                                        "hist_proj" : True},
+            # "half_gap_closure_by_2100" : {"target_year" : 2100,
+            #                             "closure_perc" : 0.5,
+            #                             "hist_proj" : True},
                         
-            "full_gap_closure_by_2100" : {"target_year" : 2100, # this scenario has to exist
-                                       "closure_perc" : 1.0,
-                                       "hist_proj" : True},
+            # "full_gap_closure_by_2100" : {"target_year" : 2100, # this scenario has to exist
+            #                            "closure_perc" : 1.0,
+            #                            "hist_proj" : True},
             
-            "quarter_gap_closure_by_2075" : {"target_year" : 2075,
-                                       "closure_perc" : 0.25,
-                                       "hist_proj" : True},
+            # "quarter_gap_closure_by_2075" : {"target_year" : 2075,
+            #                            "closure_perc" : 0.25,
+            #                            "hist_proj" : True},
 
-            "half_gap_closure_by_2075" : {"target_year" : 2075,
-                                       "closure_perc" : 0.5,
-                                       "hist_proj" : True},
+            # "half_gap_closure_by_2075" : {"target_year" : 2075,
+            #                            "closure_perc" : 0.5,
+            #                            "hist_proj" : True},
 
             "full_gap_closure_by_2075" : {"target_year" : 2075,
                                        "closure_perc" : 1.0,
                                        "hist_proj" : True},
 
-            "quarter_gap_closure_by_2050" : {"target_year" : 2050,
-                                            "closure_perc" : 0.25,
-                                            "hist_proj" : True},
+            # "quarter_gap_closure_by_2050" : {"target_year" : 2050,
+            #                                 "closure_perc" : 0.25,
+            #                                 "hist_proj" : True},
 
-            "half_gap_closure_by_2050" : {"target_year" : 2050,
-                                            "closure_perc" : 0.5,
-                                            "hist_proj" : True},
+            # "half_gap_closure_by_2050" : {"target_year" : 2050,
+            #                                 "closure_perc" : 0.5,
+            #                                 "hist_proj" : True},
 
-            "full_gap_closure_by_2050" : {"target_year" : 2050,
-                                       "closure_perc" : 1.0,
-                                       "hist_proj" : True},
+            # "full_gap_closure_by_2050" : {"target_year" : 2050,
+            #                            "closure_perc" : 1.0,
+            #                            "hist_proj" : True},
              
         }
 
@@ -59,7 +61,9 @@ start_year = 2022
 
 df = pd.read_excel(Path(data_dir) / 'animal_source_food_demand&production_1961_2100_03302026.xlsx', sheet_name='country-level absolute')
 
-linear_fits = _project_pasture_yields.generate_linear_fits()
+# linear_fits = _project_pasture_yields.generate_linear_fits()
+gdp_log_fits = _project_pasture_yields_GDP.generate_log_log_fits(overwrite=False)
+
 
 pasture_df = pd.read_csv(Path(data_dir) / "Pasture_calc.csv")
 
@@ -67,14 +71,26 @@ pasture_items = [867, 882, 947, 951, 977, 982, 1017, 1020, 1097]
 classes = ["bvmeat", "bvmilk", "bvmeat", "bvmilk", "sgmeat", "bvmilk", "sgmeat", "bvmilk", "sgmeat"]
 
 pasture_df["class"] = pasture_df["Item_Code"].apply(lambda x: classes[pasture_items.index(x)] if x in pasture_items else None)
-pasture_df = pasture_df.groupby(["Country_ISO", "class"])["fp_m2"].sum().reset_index()
+pasture_df = pasture_df.groupby(["Country_ISO", "class"])["fp_m2"].sum(min_count=1).reset_index()
 pasture_df["year"] = start_year
 
 beef_pasture = pasture_df[pasture_df["class"] == "bvmeat"][["Country_ISO", "fp_m2", "year"]].rename(columns={"Country_ISO": "iso3","fp_m2": "beef_m2"})
 mutton_pasture = pasture_df[pasture_df["class"] == "sgmeat"][["Country_ISO", "fp_m2", "year"]].rename(columns={"Country_ISO": "iso3", "fp_m2": "mutton_m2"})
 milk_pasture = pasture_df[pasture_df["class"] == "bvmilk"][["Country_ISO", "fp_m2", "year"]].rename(columns={"Country_ISO": "iso3", "fp_m2": "milk_m2"})
 
-linear_fits = linear_fits.groupby(["Country_ISO", "class"]).mean().reset_index()
+# linear_fits = linear_fits.groupby(["Country_ISO", "class"]).mean().reset_index()
+def weighted_mean_group(g):
+    weights = g["n"]
+    cols = g.drop(columns=["n"])
+    return pd.Series(np.average(cols, weights=weights, axis=0), index=cols.columns)
+
+gdp_log_fits = gdp_log_fits.drop(columns=["file", "region"])
+gdp_log_fits = (
+    gdp_log_fits
+    .groupby(["iso3", "class"])
+    .apply(weighted_mean_group)
+    .reset_index()
+)
 
 df = df.merge(beef_pasture, on=["iso3", "year"], how="left").merge(mutton_pasture, on=["iso3", "year"], how="left").merge(milk_pasture, on=["iso3", "year"], how="left")
 
@@ -103,26 +119,41 @@ for c, country in enumerate(df["iso3"].unique()):
     
     # baseline growth
     for item in ["beef", "mutton", "milk"]:
-        lf = linear_fits[(linear_fits["Country_ISO"] == country) & (linear_fits["class"] == item.replace("beef", "bvmeat").replace("mutton", "sgmeat").replace("milk", "bvmilk"))]
+        # lf = linear_fits[(linear_fits["Country_ISO"] == country) & (linear_fits["class"] == item.replace("beef", "bvmeat").replace("mutton", "sgmeat").replace("milk", "bvmilk"))]
         
+        region = _project_pasture_yields_GDP.get_region(country)
+        gdpf = gdp_log_fits[(gdp_log_fits["iso3"] == country) & (gdp_log_fits["class"] == item.replace("beef", "bvmeat").replace("mutton", "sgmeat").replace("milk", "bvmilk"))]
+
         start_val = data[f"current_{item}_yield"].values[0]
 
-        if len(lf) > 0:
-            slope = lf["Slope"].values[0]
-            intercept = lf["Intercept"].values[0]
-            val_current = intercept + slope * (start_year)
-            val_2100 = intercept + slope * (2100)
-            perc_growth_rate = ((val_2100 - val_current)/val_current) / (2100-start_year)
+        # if len(lf) > 0:
+        #     slope = lf["Slope"].values[0]
+        #     intercept = lf["Intercept"].values[0]
+        #     val_current = intercept + slope * (start_year)
+        #     val_2100 = intercept + slope * (2100)
+        #     perc_growth_rate = ((val_2100 - val_current)/val_current) / (2100-start_year)
+
+        #     df.loc[(df["iso3"] == country) & (df["year"] == start_year), f"current_{item}_yield"] = start_val
+        #     df.loc[(df["iso3"] == country) & (df["year"] > start_year), f"current_{item}_yield"] = start_val + start_val *perc_growth_rate * (df.loc[(df["iso3"] == country) & (df["year"] > start_year), "year"] - start_year)
+
+        # else:
+        #     df.loc[(df["iso3"] == country) & (df["year"] >= start_year), f"current_{item}_yield"] = start_val
+        if len(gdpf) > 0:
+            slope = gdpf["slope"].values[0]
+            intercept = gdpf["intercept"].values[0]
+            
+            gdp_dat = df[(df["iso3"] == country)][["year", "GDP per capita (constant 2015 US$)"]]
+
+            projected_yield = gdp_dat["GDP per capita (constant 2015 US$)"].apply(lambda x: np.exp(intercept + slope * np.log(x)))
+            
+            gdp_dat["projected_gdpyield_proportion"] = projected_yield / projected_yield[gdp_dat.year == start_year].values[0]
 
             df.loc[(df["iso3"] == country) & (df["year"] == start_year), f"current_{item}_yield"] = start_val
-            df.loc[(df["iso3"] == country) & (df["year"] > start_year), f"current_{item}_yield"] = start_val + start_val *perc_growth_rate * (df.loc[(df["iso3"] == country) & (df["year"] > start_year), "year"] - start_year)
-
-        else:
-            df.loc[(df["iso3"] == country) & (df["year"] >= start_year), f"current_{item}_yield"] = start_val
+            df.loc[(df["iso3"] == country) & (df["year"] > start_year), f"current_{item}_yield"] = start_val * gdp_dat[gdp_dat.year == start_year]["projected_gdpyield_proportion"].values[0]
 
     # projection of closure
     for scenario_name, scenario_data in scenarios.items():
-        target_year = scenario_data["target_year"]
+        target_year = scenario_data["target_year"]  
         current_yield_efficiency = data["current_total_yield_efficiency"].values[0]
         scenario_efficiency = data[f"{scenario_name}_closure_MAX_pasture_efficiency"].values[0]
         scenario_efficiency_interp = np.linspace(current_yield_efficiency, scenario_efficiency, target_year-start_year+1)
@@ -193,7 +224,7 @@ for item in ["beef", "mutton", "milk"]:
     df = df.drop(columns=[f"current_{item}_yield", f"{item}_m2"])
 df = df.drop(columns=["current_yield_gap", "current_yield_efficiency"])
 
-df.to_csv(Path(output_dir) / "projected_pasture_scenarios_TB_LDN.csv", index=False)
+df.to_csv(Path(output_dir) / "projected_pasture_scenarios_gdp_TB.csv", index=False)
 
 # countries = ["GBR", "TZA"]
 
