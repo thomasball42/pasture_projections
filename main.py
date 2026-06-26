@@ -147,9 +147,10 @@ for c, country in enumerate(df["iso3"].unique()):
             projected_yield = gdp_dat["GDP per capita (constant 2015 US$)"].apply(lambda x: np.exp(intercept + slope * np.log(x)))
             
             gdp_dat["projected_gdpyield_proportion"] = projected_yield / projected_yield[gdp_dat.year == start_year].values[0]
-
+            
             df.loc[(df["iso3"] == country) & (df["year"] == start_year), f"current_{item}_yield"] = start_val
-            df.loc[(df["iso3"] == country) & (df["year"] > start_year), f"current_{item}_yield"] = start_val * gdp_dat[gdp_dat.year == start_year]["projected_gdpyield_proportion"].values[0]
+
+            df.loc[(df["iso3"] == country) & (df["year"] > start_year), f"current_{item}_yield"] = start_val * gdp_dat[gdp_dat.year > start_year]["projected_gdpyield_proportion"].values[0]
 
     # projection of closure
     for scenario_name, scenario_data in scenarios.items():
