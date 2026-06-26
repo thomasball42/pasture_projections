@@ -111,5 +111,5 @@ ax.set_title(f"Projected pasture area ratio {year2}/{year1} ({col_name}, BAU pro
 ax.set_axis_off()
 ax.set_ylim(-60, 90)
 fig.tight_layout()
-fig.savefig(outputs.parent / "figs" / f"world_map_pasture_area_ratio_{col_name}_BAU.png", dpi=300)
+fig.savefig(outputs.parent / "figs" / "world_map" / f"world_map_pasture_area_ratio_{col_name}_BAU.png", dpi=300)
 plt.show()

@@ -3,5 +3,7 @@
 
 __pycache__
 *.pyc
+*.png
+outputs
 
 data/boundaries

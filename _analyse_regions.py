@@ -9,7 +9,7 @@ projections_path = Path(__file__).parent / "outputs" / "projected_pasture_scenar
 
 data_path = Path(__file__).parent / "data"
 
-outputs = Path(__file__).parent / "outputs" / "figs" / "projected_areas"
+outputs = Path(__file__).parent / "outputs" / "figs" / "projected_areas_regions"
 outputs.mkdir(exist_ok=True)
 
 df = pd.read_csv(projections_path)
@@ -56,7 +56,7 @@ for r, region in enumerate(regions):
     ax.set_ylabel("Projected pasture area (Mha)")
 
     fig.tight_layout()
-    plt.show()
-    # fig.savefig(outputs / f"projected_pasture_area_{region}_{col_filt}.png", dpi=300)
+    # plt.show()
+    fig.savefig(outputs / f"projected_pasture_area_{region}_{col_filt}.png", dpi=300)
 
 
