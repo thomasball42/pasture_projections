@@ -7,7 +7,7 @@ import _project_pasture_yields_GDP_region as _project_pasture_yields_GDP
 
 import os
 
-output_file = Path("outputs", "projected_pasture_scenarios_gdp_TB_test.csv")
+output_file = Path("outputs", "projected_pasture_scenarios_gdp_TB.csv")
 # countries_list = ["GBR", "TZA"]
 countries_list = None  # set to None to process all countries
 
@@ -32,6 +32,13 @@ scenarios = {
                     "closure_perc" : 1.0,
                     "hist_proj" : True,
                     "cap" : True
+                    },
+
+            "full_gap_closure_by_2075_uncapped" : {
+                    "target_year" : 2075,
+                    "closure_perc" : 1.0,
+                    "hist_proj" : True,
+                    "cap" : False
                     },
         }
 

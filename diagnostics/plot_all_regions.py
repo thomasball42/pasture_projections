@@ -1,11 +1,12 @@
 import math
+import os
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-PASTURE_DATA_PATH = Path("outputs", "projected_pasture_scenarios_gdp_TB_test.csv")
+PASTURE_DATA_PATH = Path("outputs", "projected_pasture_scenarios_gdp_TB.csv")
 
 # Column to group/aggregate by, e.g. "Sub-region Name" or "Country or Area"
 GROUPBY_COL = "Sub-region Name"
@@ -36,28 +37,43 @@ def load_regional_totals(
     return sums[[col for col in sums.columns if col_filter in col]].reset_index()
 
 
+def get_style(col):
+    if "demand" in col:
+        return "black", "--"
+    elif "uncapped" in col:
+        color = "tab:orange"
+    elif "capped" in col:
+        color = "tab:blue"
+    else:
+        color = "gray"
+
+    linestyle = ":" if "gap_closure" in col else "-"
+    return color, linestyle
+
+
 def plot_region(ax, region, region_data, groupby_col=GROUPBY_COL, base_year=BASE_YEAR, legend=True):
     """Plot each value column for one region, normalised to its base_year value."""
     for col in region_data.columns:
         if col in (groupby_col, "year"):
             continue
         base_value = region_data.loc[region_data["year"] == base_year, col].values[0]
-        ax.plot(region_data["year"], region_data[col] / base_value, label=col)
+        color, linestyle = get_style(col)
+        ax.plot(region_data["year"], region_data[col] / base_value, label=col, color=color, linestyle=linestyle)
 
     ax.set_title(region)
     if legend:
         ax.legend()
-    ax.set_xlim(base_year, None)
+    ax.set_xlim(base_year, region_data["year"].max())
     ax.axhline(y=1, color="k", linestyle="--", alpha=0.5)
 
 
-def plot_regions_grid(totals, regions, groupby_col=GROUPBY_COL, base_year=BASE_YEAR):
+def plot_regions_grid(totals, regions, groupby_col=GROUPBY_COL, base_year=BASE_YEAR, normalise_y=False):
     """Plot all regions as subplots of a single multipanel figure."""
-    ncols = math.ceil(math.sqrt(len(regions)))
+    ncols = math.ceil(len(regions) ** 0.4)
     nrows = math.ceil(len(regions) / ncols)
-    figsize = (3 * ncols, 2 * nrows)
+    figsize = (2.5 * ncols, 2 * nrows)
 
-    fig, axes = plt.subplots(nrows, ncols, figsize=figsize, sharey=True)
+    fig, axes = plt.subplots(nrows, ncols, figsize=figsize, sharey=True if normalise_y else False)
     axes = np.atleast_1d(axes).flatten()
 
     for ax, region in zip(axes, regions):
@@ -68,7 +84,7 @@ def plot_regions_grid(totals, regions, groupby_col=GROUPBY_COL, base_year=BASE_Y
         ax.axis("off")
 
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower right", ncol=math.ceil(len(labels) / 2), bbox_to_anchor=(1, 0.2))
+    fig.legend(handles, labels, loc="lower right", ncol=math.ceil(len(labels) / 4), bbox_to_anchor=(1, 0.2))
 
     fig.supylabel("Proportional change")
     fig.supxlabel("Year")
@@ -98,6 +114,7 @@ def main(
     base_year=BASE_YEAR,
     combine_plots=True,
     show=True,
+    normalise_y=False
 ):
     """Build the diagnostic plot(s) and return the resulting figure(s)."""
     totals = load_regional_totals(data_path, groupby_col, col_filter, region_select)
@@ -108,7 +125,7 @@ def main(
     ]
 
     if combine_plots:
-        result = plot_regions_grid(totals, regions, groupby_col, base_year)
+        result = plot_regions_grid(totals, regions, groupby_col, base_year, normalise_y=normalise_y)
     else:
         result = plot_regions_individually(totals, regions, groupby_col, base_year)
 
@@ -119,4 +136,6 @@ def main(
 
 
 if __name__ == "__main__":
-    main()
+    figs = main()
+    os.makedirs("outputs/diagnostics", exist_ok=True)
+    figs.savefig("outputs/diagnostics/all_regions_pasture_area_demand.png", dpi=300)
